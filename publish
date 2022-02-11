@@ -1,0 +1,17 @@
+#!/bin/bash
+
+set -e
+set -o pipefail
+
+IMAGE=alexfedoseev/alpine-node-yarn-esy
+VERSION=0.0.5
+
+echo "=== Building $IMAGE:$VERSION image..."
+docker build -t $IMAGE:$VERSION --platform=linux/amd64 .
+echo ""
+
+echo "=== Publishing $IMAGE:$VERSION image..."
+docker push $IMAGE:$VERSION
+echo ""
+
+echo "Done."
