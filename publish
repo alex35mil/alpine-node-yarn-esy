@@ -4,7 +4,7 @@ set -e
 set -o pipefail
 
 IMAGE=alexfedoseev/alpine-node-yarn-esy
-VERSION=0.0.7
+VERSION=0.0.8
 
 echo "=== Building $IMAGE:$VERSION image..."
 docker build -t $IMAGE:$VERSION --platform=linux/amd64 .
